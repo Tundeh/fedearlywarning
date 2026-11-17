@@ -1,0 +1,37 @@
+\begin{table*}[t]
+\centering
+\small
+\setlength{\tabcolsep}{3pt}
+\caption{Final recall and target FPR across calibration budgets. Group means do not establish per-seed attainment.}
+\label{tab:calibration_sensitivity}
+\begin{tabular}{lllll}
+\hline
+Dataset & Method & Budget & Final recall & Final FPR \\
+\hline
+CSE-CIC-IDS2018 & FedAvg & 0.25\% & 1.0000 $\pm$ 0.0000 & 0.0018 $\pm$ 0.0006 \\
+CSE-CIC-IDS2018 & FedAvg & 0.5\% & 1.0000 $\pm$ 0.0000 & 0.0043 $\pm$ 0.0012 \\
+CSE-CIC-IDS2018 & FedAvg & 1\% & 1.0000 $\pm$ 0.0000 & 0.0089 $\pm$ 0.0024 \\
+CSE-CIC-IDS2018 & FedDrift & 0.25\% & 0.0071 $\pm$ 0.0226 & 0.0029 $\pm$ 0.0009 \\
+CSE-CIC-IDS2018 & FedDrift & 0.5\% & 0.0071 $\pm$ 0.0226 & 0.0057 $\pm$ 0.0016 \\
+CSE-CIC-IDS2018 & FedDrift & 1\% & 0.0071 $\pm$ 0.0226 & 0.0110 $\pm$ 0.0021 \\
+CSE-CIC-IDS2018 & FedCCFA & 0.25\% & 0.9522 $\pm$ 0.0364 & 0.0027 $\pm$ 0.0009 \\
+CSE-CIC-IDS2018 & FedCCFA & 0.5\% & 0.9523 $\pm$ 0.0365 & 0.0056 $\pm$ 0.0014 \\
+CSE-CIC-IDS2018 & FedCCFA & 1\% & 0.9529 $\pm$ 0.0372 & 0.0109 $\pm$ 0.0019 \\
+CSE-CIC-IDS2018 & FedCCFA-GC & 0.25\% & 0.9999 $\pm$ 0.0002 & 0.0021 $\pm$ 0.0010 \\
+CSE-CIC-IDS2018 & FedCCFA-GC & 0.5\% & 0.9999 $\pm$ 0.0002 & 0.0044 $\pm$ 0.0012 \\
+CSE-CIC-IDS2018 & FedCCFA-GC & 1\% & 1.0000 $\pm$ 0.0000 & 0.0093 $\pm$ 0.0019 \\
+CICIoT2023 & FedAvg & 0.25\% & 0.9963 $\pm$ 0.0010 & 0.0024 $\pm$ 0.0013 \\
+CICIoT2023 & FedAvg & 0.5\% & 0.9979 $\pm$ 0.0007 & 0.0044 $\pm$ 0.0013 \\
+CICIoT2023 & FedAvg & 1\% & 0.9987 $\pm$ 0.0004 & 0.0094 $\pm$ 0.0021 \\
+CICIoT2023 & FedDrift & 0.25\% & 0.0939 $\pm$ 0.0723 & 0.0024 $\pm$ 0.0010 \\
+CICIoT2023 & FedDrift & 0.5\% & 0.0953 $\pm$ 0.0723 & 0.0046 $\pm$ 0.0014 \\
+CICIoT2023 & FedDrift & 1\% & 0.0969 $\pm$ 0.0722 & 0.0095 $\pm$ 0.0022 \\
+CICIoT2023 & FedCCFA & 0.25\% & 0.9968 $\pm$ 0.0011 & 0.0022 $\pm$ 0.0008 \\
+CICIoT2023 & FedCCFA & 0.5\% & 0.9981 $\pm$ 0.0008 & 0.0045 $\pm$ 0.0009 \\
+CICIoT2023 & FedCCFA & 1\% & 0.9988 $\pm$ 0.0006 & 0.0097 $\pm$ 0.0023 \\
+CICIoT2023 & FedCCFA-GC & 0.25\% & 0.9966 $\pm$ 0.0009 & 0.0021 $\pm$ 0.0009 \\
+CICIoT2023 & FedCCFA-GC & 0.5\% & 0.9982 $\pm$ 0.0007 & 0.0045 $\pm$ 0.0012 \\
+CICIoT2023 & FedCCFA-GC & 1\% & 0.9989 $\pm$ 0.0006 & 0.0098 $\pm$ 0.0024 \\
+\hline
+\end{tabular}
+\end{table*}

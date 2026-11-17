@@ -1,0 +1,21 @@
+\begin{table*}[t]
+\centering
+\small
+\setlength{\tabcolsep}{3pt}
+\caption{Final general multiclass utility at round 29. Target-family recall measures DDoS on CSE and botnet on CICIoT. Broad benign FPR counts assignment to any attack class. Mean $\pm$ sample SD over ten seeds.}
+\label{tab:final_general_utility}
+\begin{tabular}{lllllll}
+\hline
+Dataset & Method & Accuracy & BAcc & Macro-F1 & \shortstack{Target-family\\recall} & \shortstack{Broad benign\\FPR} \\
+\hline
+CSE-CIC-IDS2018 & FedAvg & 0.6256 $\pm$ 0.0016 & 0.1755 $\pm$ 0.0006 & 0.1447 $\pm$ 0.0012 & 0.0533 $\pm$ 0.0034 & 0.0001 $\pm$ 0.0001 \\
+CSE-CIC-IDS2018 & FedDrift & 0.5971 $\pm$ 0.0012 & 0.1694 $\pm$ 0.0003 & 0.1287 $\pm$ 0.0006 & 0.0163 $\pm$ 0.0017 & 0.0500 $\pm$ 0.0000 \\
+CSE-CIC-IDS2018 & FedCCFA & 0.5970 $\pm$ 0.0012 & 0.1693 $\pm$ 0.0002 & 0.1286 $\pm$ 0.0004 & 0.0160 $\pm$ 0.0010 & 0.0500 $\pm$ 0.0001 \\
+CSE-CIC-IDS2018 & FedCCFA-GC & 0.6256 $\pm$ 0.0016 & 0.1755 $\pm$ 0.0006 & 0.1447 $\pm$ 0.0012 & 0.0533 $\pm$ 0.0034 & 0.0001 $\pm$ 0.0001 \\
+CICIoT2023 & FedAvg & 0.5571 $\pm$ 0.0074 & 0.5571 $\pm$ 0.0074 & 0.5039 $\pm$ 0.0125 & 0.9945 $\pm$ 0.0013 & 0.4413 $\pm$ 0.0187 \\
+CICIoT2023 & FedDrift & 0.5475 $\pm$ 0.0069 & 0.5474 $\pm$ 0.0069 & 0.4874 $\pm$ 0.0098 & 0.9942 $\pm$ 0.0011 & 0.4430 $\pm$ 0.0185 \\
+CICIoT2023 & FedCCFA & 0.5345 $\pm$ 0.0072 & 0.5344 $\pm$ 0.0072 & 0.4642 $\pm$ 0.0122 & 0.9943 $\pm$ 0.0011 & 0.4363 $\pm$ 0.0211 \\
+CICIoT2023 & FedCCFA-GC & 0.5328 $\pm$ 0.0072 & 0.5328 $\pm$ 0.0072 & 0.4617 $\pm$ 0.0122 & 0.9943 $\pm$ 0.0011 & 0.4411 $\pm$ 0.0182 \\
+\hline
+\end{tabular}
+\end{table*}

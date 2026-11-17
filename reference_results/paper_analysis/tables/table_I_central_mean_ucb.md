@@ -1,0 +1,12 @@
+Central target alerts. Both success and delay use the mean-client FPR-bound criterion. Mean unexposed-client recall $\geq0.90$ and mean client 95\% FPR upper bound $\leq0.01$ must hold for three rounds. Delay is measured at confirmation; nonattainment contributes 20 rounds. Final observed metrics are at round 29. Mean $\pm$ sample SD over ten seeds.
+
+| Dataset | Method | Mean-UCB success | Restricted delay | Final recall | Final target FPR |
+| --- | --- | --- | --- | --- | --- |
+| CSE-CIC-IDS2018 | FedAvg | 10/10 | 6.00 ± 0.00 | 1.0000 ± 0.0000 | 0.0043 ± 0.0012 |
+| CSE-CIC-IDS2018 | FedDrift | 0/10 | 20.00 ± 0.00 | 0.0071 ± 0.0226 | 0.0057 ± 0.0016 |
+| CSE-CIC-IDS2018 | FedCCFA | 8/10 | 13.70 ± 3.77 | 0.9523 ± 0.0365 | 0.0056 ± 0.0014 |
+| CSE-CIC-IDS2018 | FedCCFA-GC | 10/10 | 3.10 ± 0.32 | 0.9999 ± 0.0002 | 0.0044 ± 0.0012 |
+| CICIoT2023 | FedAvg | 10/10 | 5.30 ± 3.77 | 0.9979 ± 0.0007 | 0.0044 ± 0.0013 |
+| CICIoT2023 | FedDrift | 0/10 | 20.00 ± 0.00 | 0.0953 ± 0.0723 | 0.0046 ± 0.0014 |
+| CICIoT2023 | FedCCFA | 10/10 | 3.50 ± 0.53 | 0.9981 ± 0.0008 | 0.0045 ± 0.0009 |
+| CICIoT2023 | FedCCFA-GC | 10/10 | 3.10 ± 0.32 | 0.9982 ± 0.0007 | 0.0045 ± 0.0012 |

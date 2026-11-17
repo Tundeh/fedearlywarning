@@ -1,0 +1,21 @@
+\begin{table*}[t]
+\centering
+\small
+\setlength{\tabcolsep}{3pt}
+\caption{Central target alerts. Both success and delay use the mean-client FPR-bound criterion. Mean unexposed-client recall $\geq0.90$ and mean client 95\% FPR upper bound $\leq0.01$ must hold for three rounds. Delay is measured at confirmation; nonattainment contributes 20 rounds. Final observed metrics are at round 29. Mean $\pm$ sample SD over ten seeds.}
+\label{tab:central_target_alert_main}
+\begin{tabular}{llllll}
+\hline
+Dataset & Method & \shortstack{Mean-UCB\\success} & \shortstack{Restricted delay\\(rounds)} & Final recall & Final target FPR \\
+\hline
+CSE-CIC-IDS2018 & FedAvg & 10/10 & 6.00 $\pm$ 0.00 & 1.0000 $\pm$ 0.0000 & 0.0043 $\pm$ 0.0012 \\
+CSE-CIC-IDS2018 & FedDrift & 0/10 & 20.00 $\pm$ 0.00 & 0.0071 $\pm$ 0.0226 & 0.0057 $\pm$ 0.0016 \\
+CSE-CIC-IDS2018 & FedCCFA & 8/10 & 13.70 $\pm$ 3.77 & 0.9523 $\pm$ 0.0365 & 0.0056 $\pm$ 0.0014 \\
+CSE-CIC-IDS2018 & FedCCFA-GC & 10/10 & 3.10 $\pm$ 0.32 & 0.9999 $\pm$ 0.0002 & 0.0044 $\pm$ 0.0012 \\
+CICIoT2023 & FedAvg & 10/10 & 5.30 $\pm$ 3.77 & 0.9979 $\pm$ 0.0007 & 0.0044 $\pm$ 0.0013 \\
+CICIoT2023 & FedDrift & 0/10 & 20.00 $\pm$ 0.00 & 0.0953 $\pm$ 0.0723 & 0.0046 $\pm$ 0.0014 \\
+CICIoT2023 & FedCCFA & 10/10 & 3.50 $\pm$ 0.53 & 0.9981 $\pm$ 0.0008 & 0.0045 $\pm$ 0.0009 \\
+CICIoT2023 & FedCCFA-GC & 10/10 & 3.10 $\pm$ 0.32 & 0.9982 $\pm$ 0.0007 & 0.0045 $\pm$ 0.0012 \\
+\hline
+\end{tabular}
+\end{table*}

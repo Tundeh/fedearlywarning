@@ -1,0 +1,43 @@
+seed: 3
+stream_seed: 3
+schedule_seed: 3
+participation_seed: 3
+initial_model_seed: 424242
+prepared_data: data/processed/cicids2018.npz
+dataset_name_for_logs: CSE-CIC-IDS2018
+rounds: 30
+run_name: fedavg_cse_hoic_rho10_N3000_p100_seed3_target_alert_v4_spatial
+result_dir: /LLM/FedLearning/FedCCFA/experiments/cse_spatial_exposure_target_alert_v4_10seed/cse/fedavg/rho10/seed_3
+threat:
+  attack_family: ddos
+  emerging_variant: ddos attack-hoic
+  evidence_mode: fixed_unique
+  fixed_total_attack_per_round: 3000
+  milestones:
+  - - 0
+    - 0.0
+  - - 10
+    - 0.1
+participation:
+  normal_prob: 1.0
+  exposed_prob: 1.0
+  min_selected: 3
+flush_every: 1
+stream:
+  attack_guard_fraction: 0.05
+  attack_test_fraction: 0.3
+  max_target_alert_negative_samples: 10000
+  target_alert_calibration_fraction: 0.5
+evaluation:
+  target_alert_calibration_fpr_limits:
+  - 0.0025
+  - 0.005
+  - 0.01
+  target_alert_primary_calibration_fpr_limit: 0.005
+  target_alert_test_fpr_limit: 0.01
+  target_alert_fpr_confidence: 0.95
+  target_alert_sustained_rounds: 3
+protocol_revision: target_alert_v4_purged_chronological_feature_disjoint_spatial_exposure_10seed
+config_template_seed: 3
+config_template_source: /LLM/FedLearning/FedCCFA/experiments/target_alert_v4_10seed/cse/fedavg/seed_3/config.yaml
+spatial_exposure_fraction: 0.1

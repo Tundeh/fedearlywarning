@@ -1,0 +1,11 @@
+seed,target_alert_recall_unexposed_max_abs_difference,target_alert_target_vs_rest_fpr_unexposed_max_abs_difference,target_alert_target_vs_rest_fpr_upper_unexposed_max_abs_difference,target_alert_target_vs_rest_fpr_upper_max_unexposed_max_abs_difference,cumulative_selected_distinct_emerging_records_max_abs_difference,cumulative_selected_distinct_emerging_feature_patterns_max_abs_difference,identical_at_1e_10
+0,0.0,0.0,0.0,0.0,0.0,0.0,True
+1,0.0,0.0,0.0,0.0,0.0,0.0,True
+2,0.0,0.0,0.0,0.0,0.0,0.0,True
+3,0.0,0.0,0.0,0.0,0.0,0.0,True
+4,0.0,0.0,0.0,0.0,0.0,0.0,True
+5,0.0,0.0,0.0,0.0,0.0,0.0,True
+6,0.0,0.0,0.0,0.0,0.0,0.0,True
+7,0.0,0.0,0.0,0.0,0.0,0.0,True
+8,0.0,0.0,0.0,0.0,0.0,0.0,True
+9,0.0,0.0,0.0,0.0,0.0,0.0,True

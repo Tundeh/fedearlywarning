@@ -1,0 +1,65 @@
+{
+  "created_at_utc": "2026-09-18T02:58:46.493153+00:00",
+  "protocol_revision": "purged_chronological_feature_disjoint_with_pattern_metrics_v4_multibudget_sustained_target_alert",
+  "repo": "/LLM/FedLearning/FedCCFA",
+  "experiment_root": "/LLM/FedLearning/FedCCFA/experiments/target_alert_v4_10seed",
+  "gpus": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "job_count": 80,
+  "code_sha256": {
+    "utils/cyber_stream.py": "b124897323544c3b6c1ec8d1c0be8cd9482ed71ea4203d405a443742bfd74052",
+    "utils/cyber_metrics.py": "cf9c0228a3dc104ffcd13451c6f8274b1703f992e5febb1dd031302e412928e5",
+    "methods/run_cyber.py": "50151dba3478259d4eda3a42a62b6e207c369bbf486fbcf95653480e4e139c5b",
+    "utils/cyber_adapters.py": "54c8c40664bde39a1530bcca7f8c8f30b3fc40434ce42d93f65ee03c94eba72d",
+    "entities/FedDrift.py": "8169fcb81f67c1bbea5a97e165b3c2e2d3a0fb2baf944b34ac6749d94c749b06",
+    "entities/FedDrift_Cyber.py": "1feaf84a668728e0dbec4af4389a275f00ae3a25a8656d5fbfd4eaf9665fcfdb"
+  },
+  "datasets": {
+    "cse": {
+      "name": "CSE-CIC-IDS2018",
+      "template_root": "experiments/paper_cicids_central_20260831_220443",
+      "expected_row_challenge": 4439,
+      "expected_pattern_challenge": 3112
+    },
+    "ciciot": {
+      "name": "CICIoT2023",
+      "template_root": "experiments/ciciot2023_mirai_central_20260831_210113",
+      "expected_row_challenge": 5000,
+      "expected_pattern_challenge": 5000
+    }
+  },
+  "methods": {
+    "fedavg": {
+      "algorithm": "FedAvg",
+      "sharing_mode": null
+    },
+    "feddrift": {
+      "algorithm": "FedDrift",
+      "sharing_mode": null
+    },
+    "fedccfa": {
+      "algorithm": "FedCCFA",
+      "sharing_mode": "clustered"
+    },
+    "fedccfa_global_classifier": {
+      "algorithm": "FedCCFA",
+      "sharing_mode": "global_classifier"
+    }
+  },
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ]
+}

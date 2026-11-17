@@ -1,0 +1,16 @@
+Paired restricted-delay differences: global sharing minus reference. Marginal percentile-bootstrap 95\% intervals use 100,000 resamples. Exact sign-flip tests are Holm-adjusted across six comparisons within each dataset--metric family.
+
+| Dataset | Comparison | Criterion | Difference | 95% CI | Exact p | Holm p |
+| --- | --- | --- | --- | --- | --- | --- |
+| CICIoT2023 | GC vs FedAvg | All-site | -2.20 | [-4.40, -1.00] | 0.0020 | 0.0117 |
+| CICIoT2023 | GC vs FedCCFA | All-site | -0.40 | [-0.80, +0.00] | 0.2188 | 0.2188 |
+| CICIoT2023 | GC vs FedAvg | Mean-UCB | -2.20 | [-4.40, -1.00] | 0.0020 | 0.0117 |
+| CICIoT2023 | GC vs FedCCFA | Mean-UCB | -0.40 | [-0.80, +0.00] | 0.2188 | 0.2188 |
+| CICIoT2023 | GC vs FedAvg | Empirical | -1.10 | [-1.30, -1.00] | 0.0020 | 0.0117 |
+| CICIoT2023 | GC vs FedCCFA | Empirical | -0.50 | [-0.80, -0.20] | 0.0625 | 0.0625 |
+| CSE-CIC-IDS2018 | GC vs FedAvg | All-site | -2.90 | [-3.00, -2.70] | 0.0020 | 0.0117 |
+| CSE-CIC-IDS2018 | GC vs FedCCFA | All-site | -11.30 | [-13.90, -8.80] | 0.0020 | 0.0117 |
+| CSE-CIC-IDS2018 | GC vs FedAvg | Mean-UCB | -2.90 | [-3.00, -2.70] | 0.0020 | 0.0117 |
+| CSE-CIC-IDS2018 | GC vs FedCCFA | Mean-UCB | -10.60 | [-13.00, -8.40] | 0.0020 | 0.0117 |
+| CSE-CIC-IDS2018 | GC vs FedAvg | Empirical | -2.90 | [-3.00, -2.70] | 0.0020 | 0.0117 |
+| CSE-CIC-IDS2018 | GC vs FedCCFA | Empirical | -9.00 | [-10.20, -7.80] | 0.0020 | 0.0117 |
