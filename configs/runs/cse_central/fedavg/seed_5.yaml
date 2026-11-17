@@ -1,0 +1,42 @@
+seed: 5
+stream_seed: 5
+schedule_seed: 5
+participation_seed: 5
+initial_model_seed: 424242
+prepared_data: data/processed/cicids2018.npz
+dataset_name_for_logs: CSE-CIC-IDS2018
+rounds: 30
+run_name: fedavg_cicids_rho30_N3000_p100_seed5_target_alert_v4
+result_dir: outputs/cse_central/fedavg/seed_5
+threat:
+  attack_family: ddos
+  emerging_variant: ddos attack-hoic
+  evidence_mode: fixed_unique
+  fixed_total_attack_per_round: 3000
+  milestones:
+  - - 0
+    - 0.0
+  - - 10
+    - 0.3
+participation:
+  normal_prob: 1.0
+  exposed_prob: 1.0
+  min_selected: 3
+flush_every: 1
+stream:
+  attack_guard_fraction: 0.05
+  attack_test_fraction: 0.3
+  max_target_alert_negative_samples: 10000
+  target_alert_calibration_fraction: 0.5
+evaluation:
+  target_alert_calibration_fpr_limits:
+  - 0.0025
+  - 0.005
+  - 0.01
+  target_alert_primary_calibration_fpr_limit: 0.005
+  target_alert_test_fpr_limit: 0.01
+  target_alert_fpr_confidence: 0.95
+  target_alert_sustained_rounds: 3
+protocol_revision: purged_chronological_feature_disjoint_with_pattern_metrics_v4_multibudget_sustained_target_alert
+config_template_seed: 0
+config_template_source: experiments/paper_cicids_central_20260831_220443/fedavg/seed_0/config.yaml

@@ -1,0 +1,102 @@
+{
+  "_cyber_config": "configs/FedCCFA_Cyber.yaml",
+  "_experiment_config": "configs/runs/cse_central/fedccfa_global_classifier/seed_5.yaml",
+  "_original_config": "configs/FedCCFA.yaml",
+  "algorithm": "FedCCFA",
+  "alpha": 0.5,
+  "attack_label": 4,
+  "balance_max_per_class": 5,
+  "balanced_clf_lr": 0.1,
+  "balanced_epochs": 5,
+  "batch_size": 128,
+  "benign_family": "benign",
+  "benign_label": 0,
+  "clf_epochs": 1,
+  "clf_lr": 0.1,
+  "client_num": 20,
+  "clustered_protos": true,
+  "config_template_seed": 0,
+  "config_template_source": "experiments/paper_cicids_central_20260831_220443/fedccfa_global_classifier/seed_0/config.yaml",
+  "dataset": "CSE-CIC-IDS2018",
+  "dataset_name_for_logs": "CSE-CIC-IDS2018",
+  "device": "cuda:0",
+  "drift_pattern": false,
+  "dropout": 0.2,
+  "eps": 0.1,
+  "evaluation": {
+    "target_alert_calibration_fpr_limits": [
+      0.0025,
+      0.005,
+      0.01
+    ],
+    "target_alert_fpr_confidence": 0.95,
+    "target_alert_primary_calibration_fpr_limit": 0.005,
+    "target_alert_sustained_rounds": 3,
+    "target_alert_test_fpr_limit": 0.01
+  },
+  "feature_dim": 128,
+  "fedccfa_sharing_mode": "global_classifier",
+  "flush_every": 1,
+  "gamma": 20.0,
+  "hidden_dim": 256,
+  "initial_model_seed": 424242,
+  "input_dim": 70,
+  "lambda": 0.0,
+  "model": "CNN",
+  "momentum": 0.9,
+  "num_classes": 8,
+  "oracle": false,
+  "p_lr": 0.01,
+  "participation": {
+    "exposed_prob": 1.0,
+    "min_selected": 3,
+    "normal_prob": 1.0
+  },
+  "participation_seed": 5,
+  "partition": "hetero",
+  "penalize": "CL",
+  "prepared_data": "data/processed/cicids2018.npz",
+  "proto_start_round": 10,
+  "protocol_revision": "purged_chronological_feature_disjoint_with_pattern_metrics_v4_multibudget_sustained_target_alert",
+  "rep_epochs": 5,
+  "rep_lr": 0.01,
+  "result_dir": "outputs/cse_central/fedccfa_global_classifier/seed_5",
+  "rounds": 30,
+  "run_name": "fedccfa_global_classifier_cicids_rho30_N3000_p100_seed5_target_alert_v4",
+  "sample_ratio": 0.5,
+  "schedule_seed": 5,
+  "seed": 5,
+  "stream": {
+    "attack_guard_fraction": 0.05,
+    "attack_test_fraction": 0.3,
+    "local_test_fraction": 0.15,
+    "max_target_alert_negative_samples": 10000,
+    "min_window_samples": 32,
+    "target_alert_calibration_fraction": 0.5,
+    "window_size": 2048
+  },
+  "stream_seed": 5,
+  "temperature": 0.1,
+  "threat": {
+    "attack_family": "ddos",
+    "attack_mix_fraction": 0.2,
+    "emerging_variant": "ddos attack-hoic",
+    "evidence_mode": "fixed_unique",
+    "fixed_total_attack_per_round": 3000,
+    "milestones": [
+      [
+        0,
+        0.0
+      ],
+      [
+        10,
+        0.3
+      ]
+    ]
+  },
+  "upstream_stub_dataset": "CIFAR10",
+  "upstream_stub_model": "CNN",
+  "upstream_stub_num_classes": 10,
+  "weight_decay": 1e-05,
+  "weights": "uniform"
+}

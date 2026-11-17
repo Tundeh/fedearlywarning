@@ -1,0 +1,64 @@
+# Human-readable summary of the accepted-paper protocol.
+# This file is documentation. The values the runs actually used are the
+# frozen per-run overlays in configs/runs/ (layered on configs/<Alg>.yaml,
+# configs/Cyber_Common.yaml and configs/<Alg>_Cyber.yaml) and the fully
+# resolved configs in configs/resolved/. scripts/verify_reference_results.py
+# checks every run's metadata against these values.
+paper:
+  venue: IEEE BigData 2026
+  title: "Federated Early Warning for Emerging Cyber Threats: Measuring Knowledge Dissemination in Distributed Intrusion Detection"
+common:
+  clients: 20
+  rounds: 30
+  emergence_round: 10
+  central_exposure_fraction: 0.30
+  central_exposed_clients: 6
+  participation: 1.0
+  evidence_mode: fixed_unique
+  emerging_records_per_active_round: 3000
+  seeds: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  initial_model_seed: 424242
+  background_window_size: 2048
+  batch_size: 128
+target_alert:
+  calibration_fpr_budget: 0.005
+  recall_threshold: 0.90
+  test_fpr_limit: 0.01
+  clopper_pearson_delta: 0.05
+  consecutive_rounds: 3
+  post_emergence_horizon: 20
+emerging_split:
+  train_fraction: 0.65
+  guard_fraction: 0.05
+  candidate_challenge_fraction: 0.30
+  exact_feature_overlap_purge: true
+  challenge_cap_rows: 5000
+cse_cic_ids2018:
+  input_dim: 70
+  classes: 8
+  emerging_variant: "DDoS Attack-HOIC"
+  emerging_family: "ddos"
+ciciot2023:
+  input_dim: 39
+  classes: 7
+  emerging_variant: "mirai-udpplain"
+  emerging_family: "botnet"
+  stream_ordering_note: "Deterministic experimental construction, not a verified common real-world event timeline."
+experiments:
+  cse_central:
+    methods: [FedAvg, FedDrift, FedCCFA, FedCCFA-GC]
+    exposure_fraction: 0.30
+    seeds: 10
+  ciciot_central:
+    methods: [FedAvg, FedDrift, FedCCFA, FedCCFA-GC]
+    exposure_fraction: 0.30
+    seeds: 10
+  cse_exposure_sweep:
+    methods: [FedAvg]
+    exposure_fractions: [0.10, 0.30, 0.50]
+    seeds: 10
+analysis:
+  bootstrap_resamples: 100000
+  bootstrap_rng_seed: 20260918
+  paired_test: exact two-sided sign-flip (exact McNemar for binary attainment)
+  multiplicity: Holm across six method comparisons per dataset-metric family
