@@ -11,13 +11,22 @@ sweep on CSE-CIC-IDS2018. Built on [FedCCFA](https://github.com/Chen-Junbao/FedC
 
 ## 1. Install
 
-Python 3.12 and a CUDA GPU (tested with PyTorch 2.10.0 + CUDA 12.8 on NVIDIA A40).
+You need Python 3.12 and, for training, any NVIDIA GPU with CUDA.
 
 ```bash
 git clone https://github.com/Tundeh/fedearlywarning.git
 cd fedearlywarning
 pip install torch==2.10.0 torchvision==0.25.0 --index-url https://download.pytorch.org/whl/cu128
 pip install -r requirements.txt
+```
+
+The `cu128` build needs an NVIDIA driver that supports CUDA 12.8. For an
+older driver, use the matching build from
+<https://pytorch.org/get-started/locally/> (for example `cu126` or `cu118`).
+To check that PyTorch sees your GPU:
+
+```bash
+python -c "import torch; print(torch.cuda.is_available(), torch.cuda.get_device_name(0))"
 ```
 
 ## 2. Check the paper results (no GPU or dataset needed)
@@ -52,15 +61,24 @@ Each script prints the expected and the obtained SHA-256 checksum; they should m
 
 ### Train
 
+On a single GPU (GPU 0):
+
 ```bash
-GPUS=0,1,2,3 bash scripts/run_cse_central.sh         # 40 runs
-GPUS=0,1,2,3 bash scripts/run_ciciot_central.sh      # 40 runs
-GPUS=0,1,2,3 bash scripts/run_cse_exposure_sweep.sh  # 30 runs
+bash scripts/run_cse_central.sh         # 40 runs
+bash scripts/run_ciciot_central.sh      # 40 runs
+bash scripts/run_cse_exposure_sweep.sh  # 30 runs
 ```
 
-`GPUS` lists the GPUs to use, one run per GPU at a time. Each run takes about
-10 minutes on an A40, and all 110 runs take about 16 GPU-hours. Results go to
-`outputs/`. Completed runs are skipped if you restart.
+With several GPUs, list their IDs in `GPUS` (as shown by `nvidia-smi`). One
+run goes to each listed GPU at a time:
+
+```bash
+GPUS=0,1 bash scripts/run_cse_central.sh
+```
+
+Results go to `outputs/`, and completed runs are skipped if you restart. For
+reference, one run took about 10 minutes on an NVIDIA A40 (16 GPU-hours for
+all 110 runs); expect different times on other GPUs.
 
 To run fewer, set `SEEDS` and/or `METHODS`, for example:
 
@@ -132,7 +150,10 @@ FPR test:
   construction, not a real-world timeline.
 - Test records share no exact features with training records, but may come
   from the same capture sessions.
-- Bit-identical reruns need the same library, CUDA and GPU versions.
+- The reference outputs were produced with PyTorch 2.10.0, CUDA 12.8 and
+  NVIDIA A40 GPUs, where reruns are bit-identical. On other GPU models or
+  CUDA/PyTorch versions, results may differ slightly; use
+  `scripts/compare_runs.py` to compare your runs with the reference.
   [RELEASE_AUDIT.md](RELEASE_AUDIT.md) shows how this release was validated.
 
 ## License
