@@ -1,0 +1,2 @@
+# FedAvg cyber overlay. Original configs/FedAvg.yaml is loaded first.
+# No algorithmic hyperparameter is changed here unless explicitly listed.

@@ -1,0 +1,11 @@
+# FedCCFA cyber overlay. Original configs/FedCCFA.yaml is loaded first.
+# Sparse class/prototype changes live in entities/FedCCFA_Cyber.py.
+proto_start_round: 10
+balance_max_per_class: 5
+oracle: false
+
+# Mechanism ablation:
+#   clustered          -> original cyber FedCCFA behavior
+#   global_ddos_head   -> after normal FedCCFA, globally share only the runtime attack-class row
+#   global_classifier  -> after normal FedCCFA, globally share the full classifier
+fedccfa_sharing_mode: clustered

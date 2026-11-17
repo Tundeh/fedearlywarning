@@ -1,0 +1,3 @@
+# FedDrift cyber overlay. Original configs/FedDrift.yaml is loaded first.
+# The adapter fails loudly if the local upstream FedDrift API differs from the
+# recognized entity-level round interfaces; run validate_cyber_compat.py first.
