@@ -1,0 +1,165 @@
+diff --git a/.DS_Store b/.DS_Store
+old mode 100644
+new mode 100755
+diff --git a/.gitignore b/.gitignore
+old mode 100644
+new mode 100755
+diff --git a/FedCCFA.png b/FedCCFA.png
+old mode 100644
+new mode 100755
+diff --git a/LICENSE b/LICENSE
+old mode 100644
+new mode 100755
+diff --git a/README.md b/README.md
+old mode 100644
+new mode 100755
+diff --git a/configs/AdaptiveFedAvg.yaml b/configs/AdaptiveFedAvg.yaml
+old mode 100644
+new mode 100755
+diff --git a/configs/Ditto.yaml b/configs/Ditto.yaml
+old mode 100644
+new mode 100755
+diff --git a/configs/FedAvg.yaml b/configs/FedAvg.yaml
+old mode 100644
+new mode 100755
+diff --git a/configs/FedBABU.yaml b/configs/FedBABU.yaml
+old mode 100644
+new mode 100755
+diff --git a/configs/FedCCFA.yaml b/configs/FedCCFA.yaml
+old mode 100644
+new mode 100755
+diff --git a/configs/FedDrift.yaml b/configs/FedDrift.yaml
+old mode 100644
+new mode 100755
+diff --git a/configs/FedFM.yaml b/configs/FedFM.yaml
+old mode 100644
+new mode 100755
+diff --git a/configs/FedPAC.yaml b/configs/FedPAC.yaml
+old mode 100644
+new mode 100755
+diff --git a/configs/FedProx.yaml b/configs/FedProx.yaml
+old mode 100644
+new mode 100755
+diff --git a/configs/FedRep.yaml b/configs/FedRep.yaml
+old mode 100644
+new mode 100755
+diff --git a/configs/Flash.yaml b/configs/Flash.yaml
+old mode 100644
+new mode 100755
+diff --git a/configs/IFCA.yaml b/configs/IFCA.yaml
+old mode 100644
+new mode 100755
+diff --git a/configs/SCAFFOLD.yaml b/configs/SCAFFOLD.yaml
+old mode 100644
+new mode 100755
+diff --git a/configs/pFedMe.yaml b/configs/pFedMe.yaml
+old mode 100644
+new mode 100755
+diff --git a/entities/AdaptiveFedAvg.py b/entities/AdaptiveFedAvg.py
+old mode 100644
+new mode 100755
+diff --git a/entities/Ditto.py b/entities/Ditto.py
+old mode 100644
+new mode 100755
+diff --git a/entities/FedBABU.py b/entities/FedBABU.py
+old mode 100644
+new mode 100755
+diff --git a/entities/FedCCFA.py b/entities/FedCCFA.py
+old mode 100644
+new mode 100755
+diff --git a/entities/FedDrift.py b/entities/FedDrift.py
+old mode 100644
+new mode 100755
+diff --git a/entities/FedFM.py b/entities/FedFM.py
+old mode 100644
+new mode 100755
+diff --git a/entities/FedPAC.py b/entities/FedPAC.py
+old mode 100644
+new mode 100755
+diff --git a/entities/FedProx.py b/entities/FedProx.py
+old mode 100644
+new mode 100755
+diff --git a/entities/FedRep.py b/entities/FedRep.py
+old mode 100644
+new mode 100755
+diff --git a/entities/Flash.py b/entities/Flash.py
+old mode 100644
+new mode 100755
+diff --git a/entities/IFCA.py b/entities/IFCA.py
+old mode 100644
+new mode 100755
+diff --git a/entities/SCAFFOLD.py b/entities/SCAFFOLD.py
+old mode 100644
+new mode 100755
+diff --git a/entities/__init__.py b/entities/__init__.py
+old mode 100644
+new mode 100755
+diff --git a/entities/base.py b/entities/base.py
+old mode 100644
+new mode 100755
+diff --git a/entities/pFedMe.py b/entities/pFedMe.py
+old mode 100644
+new mode 100755
+diff --git a/methods/.DS_Store b/methods/.DS_Store
+old mode 100644
+new mode 100755
+diff --git a/methods/AdaptiveFedAvg.py b/methods/AdaptiveFedAvg.py
+old mode 100644
+new mode 100755
+diff --git a/methods/Ditto.py b/methods/Ditto.py
+old mode 100644
+new mode 100755
+diff --git a/methods/FedAvg.py b/methods/FedAvg.py
+old mode 100644
+new mode 100755
+diff --git a/methods/FedBABU.py b/methods/FedBABU.py
+old mode 100644
+new mode 100755
+diff --git a/methods/FedCCFA.py b/methods/FedCCFA.py
+old mode 100644
+new mode 100755
+diff --git a/methods/FedDrift.py b/methods/FedDrift.py
+old mode 100644
+new mode 100755
+diff --git a/methods/FedFM.py b/methods/FedFM.py
+old mode 100644
+new mode 100755
+diff --git a/methods/FedPAC.py b/methods/FedPAC.py
+old mode 100644
+new mode 100755
+diff --git a/methods/FedProx.py b/methods/FedProx.py
+old mode 100644
+new mode 100755
+diff --git a/methods/FedRep.py b/methods/FedRep.py
+old mode 100644
+new mode 100755
+diff --git a/methods/Flash.py b/methods/Flash.py
+old mode 100644
+new mode 100755
+diff --git a/methods/IFCA.py b/methods/IFCA.py
+old mode 100644
+new mode 100755
+diff --git a/methods/SCAFFOLD.py b/methods/SCAFFOLD.py
+old mode 100644
+new mode 100755
+diff --git a/methods/pFedMe.py b/methods/pFedMe.py
+old mode 100644
+new mode 100755
+diff --git a/requirements.txt b/requirements.txt
+old mode 100644
+new mode 100755
+diff --git a/utils/__init__.py b/utils/__init__.py
+old mode 100644
+new mode 100755
+diff --git a/utils/drift.py b/utils/drift.py
+old mode 100644
+new mode 100755
+diff --git a/utils/gen_dataset.py b/utils/gen_dataset.py
+old mode 100644
+new mode 100755
+diff --git a/utils/metric.py b/utils/metric.py
+old mode 100644
+new mode 100755
+diff --git a/utils/models.py b/utils/models.py
+old mode 100644
+new mode 100755

@@ -1,0 +1,33 @@
+# Final experiment roots used for the accepted paper.
+# Source repository on this host: /home/jamiu1/LLM/FL_Dup/FedLearning/FedCCFA
+# (a copy of /home/jamiu1/LLM/FedLearning/FedCCFA, mounted as /LLM/FedLearning/FedCCFA
+#  inside the Docker container where the runs were executed; run metadata uses /LLM paths).
+
+CSE central (4 methods x 10 seeds, rho=0.30):
+  /home/jamiu1/LLM/FL_Dup/FedLearning/FedCCFA/experiments/target_alert_v4_10seed/cse
+  (run-time path /LLM/FedLearning/FedCCFA/experiments/target_alert_v4_10seed/cse)
+  Reason: 40/40 runs validated; recomputed Table I/II/III match the accepted paper
+  (e.g. FedCCFA 8/10, 13.70 +/- 3.77; GC 3.10 +/- 0.32; GC vs FedCCFA -10.60 [-13.00,-8.40], Holm p=0.0117).
+
+CICIoT2023 central (4 methods x 10 seeds, rho=0.30):
+  /home/jamiu1/LLM/FL_Dup/FedLearning/FedCCFA/experiments/target_alert_v4_10seed/ciciot
+  (run-time path /LLM/FedLearning/FedCCFA/experiments/target_alert_v4_10seed/ciciot)
+  Reason: 40/40 runs validated; recomputed tables match (FedAvg 5.30 +/- 3.77; FedCCFA 3.50 +/- 0.53;
+  GC vs FedCCFA -0.40 [-0.80,+0.00], p=0.2188).
+
+CSE spatial-exposure sweep (FedAvg x rho {0.10,0.30,0.50} x 10 seeds):
+  /home/jamiu1/LLM/FL_Dup/FedLearning/FedCCFA/experiments/cse_spatial_exposure_target_alert_v4_10seed
+  Reason: 30/30 runs VALID; the only 10-seed calibrated (target-alert v4) sweep; feeds Figure 1 and Table S2.
+
+Accepted analysis bundle (generated from the two roots above):
+  /home/jamiu1/LLM/FL_Dup/FedLearning/FedCCFA/paper_artifacts/corrected_v4_20260926_195133
+  Generator: scripts/regenerate_corrected_v4_results.bash (embedded Python extracted verbatim to
+  analysis/paper_analysis.py). Its Table I/II/III exactly match the accepted-paper fingerprints.
+
+Rejected candidates (examples):
+  experiments/target_alert_smoke_v3_seed0, target_alert_smoke_v4_seed0, corrected_smoke   - smoke tests (1 seed)
+  experiments/corrected_central_feature_disjoint_v1, _v2                                  - pre-target-alert (v3 and earlier) metrics
+  experiments/paper_cicids_central_20260831_220443, ciciot2023_mirai_central_*            - 5-seed, uncalibrated EWS
+  experiments/early_warning_*, threat_visibility_*, visibility_*                           - exploratory
+  paper_artifacts/final_target_alert_v4, target_alert_v4                                   - earlier bundles of the same runs, superseded by corrected_v4
+  experiments/mechanism_*                                                                  - run Oct-Nov 2026 (after the 2026-09-26 analysis bundle); not used by any accepted-paper table/figure

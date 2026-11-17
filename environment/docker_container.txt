@@ -1,0 +1,1 @@
+image=my-conda-docker:latest image_id=sha256:381a28ebef886b3ebb01e4b77e663dc60e888f32d5043500018c1426f2eecbdd

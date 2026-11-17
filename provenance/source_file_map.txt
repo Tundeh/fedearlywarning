@@ -1,0 +1,41 @@
+# release_path  sha256  source_path  identical_to_source
+LICENSE  01adf564dcea0228e1718f856f4e8d66f5e71c3c038230d14327ab14dcfc16f8  FedCCFA/LICENSE  yes
+configs/Cyber_Common.yaml  7504d05f6f27a650ef7d0852e586455e6f86dc532b56cc098678efca28c8971f  FedCCFA/configs/Cyber_Common.yaml  yes
+configs/FedAvg.yaml  d9a2f36ad0d87b58f2e705d6e2ca655a79c7a48b4e255e6a6c506b0e74e233d7  FedCCFA/configs/FedAvg.yaml  yes
+configs/FedAvg_Cyber.yaml  99f7f9bd031f68f4e029579ca543044ca68c0ebd8ab1e1a8aa186d24a2c31569  FedCCFA/configs/FedAvg_Cyber.yaml  yes
+configs/FedCCFA.yaml  cef7dc08b2757b7a44b64fec1bfb822774bffce6d556456593759e2e97796f30  FedCCFA/configs/FedCCFA.yaml  yes
+configs/FedCCFA_Cyber.yaml  45914268c00c7f264858fd2c0d4d1d5d2bf515f67038c2d3ec4690b91cbaccab  FedCCFA/configs/FedCCFA_Cyber.yaml  yes
+configs/FedDrift.yaml  dd4b7bffbc76dae7ac557136328ce7faeba5e533c71b99c7d353ce69fb8dcbb6  FedCCFA/configs/FedDrift.yaml  yes
+configs/FedDrift_Cyber.yaml  32b05bec4ab7777befde9385cd487c88b37b9051b5850f75f3f599c0b5790fb1  FedCCFA/configs/FedDrift_Cyber.yaml  yes
+entities/FedAvg_Cyber.py  831ea11eea8a8e5a80b928a6ee88a20f945925c7a4f6ae5d4332530ae0575fcb  FedCCFA/entities/FedAvg_Cyber.py  yes
+entities/FedCCFA.py  bb874e30fef3123e3b8cb397c574714faae838cd1bf31a3076770be6cf3e266d  FedCCFA/entities/FedCCFA.py  yes
+entities/FedCCFA_Cyber.py  2afd92540ca84ab2d5fe8f193d1da16b5d2aaf41e75c237ff259f3ad338baa3d  FedCCFA/entities/FedCCFA_Cyber.py  yes
+entities/FedDrift.py  8169fcb81f67c1bbea5a97e165b3c2e2d3a0fb2baf944b34ac6749d94c749b06  FedCCFA/entities/FedDrift.py  yes
+entities/FedDrift_Cyber.py  1feaf84a668728e0dbec4af4389a275f00ae3a25a8656d5fbfd4eaf9665fcfdb  FedCCFA/entities/FedDrift_Cyber.py  yes
+entities/__init__.py  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  FedCCFA/entities/__init__.py  yes
+entities/base.py  d373fdefb66f0db99f13074be4e00485aa2e9fe6d51d1f863c7ce1625d8d74a9  FedCCFA/entities/base.py  yes
+methods/FedAvg_Cyber.py  f0ef5bcaa630eed6e879f7f7f8c24eb4a1a67c7eca9b9af152fc2f07904a740a  FedCCFA/methods/FedAvg_Cyber.py  yes
+methods/FedCCFA_Cyber.py  4a0524235cf4cd060d06eeaa9d29db1dc96eba3eb0f746e3db9c0cfe45c19224  FedCCFA/methods/FedCCFA_Cyber.py  yes
+methods/FedDrift_Cyber.py  740b0c5e2bdd3609f3048611cb6f66dccb09ed5c64d8b997f830eebc0d322f4d  FedCCFA/methods/FedDrift_Cyber.py  yes
+methods/run_cyber.py  7cd12b0c8afb4095802b9da43bf61c17d6d9de6aa71d4df2a4812c55612490fa  FedCCFA/methods/run_cyber.py  NO - trimmed, see provenance/post_validation_trimming.patch
+scripts/inspect_cyber_data.py  15a9af0d767b3a332b85d6751f3bed57e708b63cddadcc781b108cea34d83747  FedCCFA/scripts/inspect_cyber_data.py  yes
+tests/test_cyber_components.py  13dfa9a133283739e2000d637996bf9345e7f0d11c16fce9ba6a826019029070  FedCCFA/tests/test_cyber_components.py  yes
+tests/test_feddrift_native_adapter.py  26b98cd5277f9e944a931f58c6106962445f29149842a18c62820127dbc233d5  FedCCFA/tests/test_feddrift_native_adapter.py  yes
+tests/test_feddrift_new_model_signal.py  240e1b40d6ae045d42d9e25c8edf7eff7661d2342c849b06e102aeda0ba88c48  FedCCFA/tests/test_feddrift_new_model_signal.py  yes
+tests/test_shared_cyber_framework.py  316f6625b96b9d6075f65c572847dfafbc46dd29edee6391af105c3554470b32  FedCCFA/tests/test_shared_cyber_framework.py  yes
+utils/__init__.py  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  FedCCFA/utils/__init__.py  yes
+utils/cyber_adapters.py  c7e0d3c31c41128fb8c1254e94aa55b47b11703e939e97215171fdf4c2d94a90  FedCCFA/utils/cyber_adapters.py  NO - trimmed, see provenance/post_validation_trimming.patch
+utils/cyber_config.py  a1e02977c06cf87c307d3d02c72f91707c149d260c28598834bf3a9f3c6816b3  FedCCFA/utils/cyber_config.py  yes
+utils/cyber_dataset.py  86ec510f0974c2a57448f696385c6cb4c54c69f7ce0ae688613ebe4f8c537c26  FedCCFA/utils/cyber_dataset.py  yes
+utils/cyber_factory.py  addeb543583f4a4825897c05a50db40e8fc9c7007562909d62813515ba40b59a  FedCCFA/utils/cyber_factory.py  NO - trimmed, see provenance/post_validation_trimming.patch
+utils/cyber_metrics.py  cf9c0228a3dc104ffcd13451c6f8274b1703f992e5febb1dd031302e412928e5  FedCCFA/utils/cyber_metrics.py  yes
+utils/cyber_model_bridge.py  5988429b8b879ed267a025145b55631fc433a6888c47a1070f1b0df33230b48a  FedCCFA/utils/cyber_model_bridge.py  yes
+utils/cyber_models.py  14c3414b9e4ece56bf07f676b77caf503a40f0b702d5454907b95fe3d97bb129  FedCCFA/utils/cyber_models.py  yes
+utils/cyber_schedule.py  3c54a03e9edf064540e588a6d979d3cc8560c8e54c80ca71414ae6792e535b70  FedCCFA/utils/cyber_schedule.py  yes
+utils/cyber_stream.py  b124897323544c3b6c1ec8d1c0be8cd9482ed71ea4203d405a443742bfd74052  FedCCFA/utils/cyber_stream.py  yes
+utils/gen_dataset.py  7e97319fb35d675958c4603c80cc733f6d6e3af15ec1cb8007d4daa7399ce1a2  FedCCFA/utils/gen_dataset.py  yes
+utils/metric.py  704f70e6570dd52ba3e415ae4e31ca868d06227023886f313d253760e818f136  FedCCFA/utils/metric.py  yes
+utils/models.py  f6ef79ca4c9986cffdf63b76e1908112cfaef5bc6e27f9be230b83e0f1145799  FedCCFA/utils/models.py  NO - trimmed, see provenance/post_validation_trimming.patch
+utils/prepare_cicids2018.py  fa834b6c29a12179ac17aee644984df5447d456674f089663cffd22c127ff74c  FedCCFA/utils/prepare_cicids2018.py  yes
+utils/prepare_ciciot2023.py  0260d06c8acf281ab2d25df8fe6249d50c442e6357d1b0f8d5d9edd9311d1bc7  FedCCFA/utils/prepare_ciciot2023.py  yes
+analysis/paper_analysis.py  5ea01e3335bf13757d36742803eec16513971c1b34bf2698c81ee023f15ccf9c  FedCCFA/scripts/regenerate_corrected_v4_results.bash  verbatim heredoc body (lines 16-1099)

@@ -1,0 +1,46 @@
+# Fresh rerun from the release tree (2026-11-17), container RG_conda_lates, 4x NVIDIA A40, seed 0, all 4 methods x 2 datasets.
+# Only wall-clock columns (*_seconds) differ textually; all metric columns are identical.
+  MATCH        ciciot_central/fedavg/seed_0/fedavg_ciciot2023_mirai_rho30_N3000_p100_seed0_target_alert_v4_rounds.csv: max|diff|=0 (worst column: None)
+  MATCH        ciciot_central/fedccfa/seed_0/fedccfa_ciciot2023_mirai_rho30_N3000_p100_seed0_target_alert_v4_rounds.csv: max|diff|=0 (worst column: None)
+  MATCH        ciciot_central/fedccfa_global_classifier/seed_0/fedccfa_global_classifier_ciciot2023_mirai_rho30_N3000_p100_seed0_target_alert_v4_rounds.csv: max|diff|=0 (worst column: None)
+  MATCH        ciciot_central/feddrift/seed_0/feddrift_ciciot2023_mirai_rho30_N3000_p100_seed0_target_alert_v4_rounds.csv: max|diff|=0 (worst column: None)
+  MATCH        cse_central/fedavg/seed_0/fedavg_cicids_rho30_N3000_p100_seed0_target_alert_v4_rounds.csv: max|diff|=0 (worst column: None)
+  MATCH        cse_central/fedccfa/seed_0/fedccfa_cicids_rho30_N3000_p100_seed0_target_alert_v4_rounds.csv: max|diff|=0 (worst column: None)
+  MATCH        cse_central/fedccfa_global_classifier/seed_0/fedccfa_global_classifier_cicids_rho30_N3000_p100_seed0_target_alert_v4_rounds.csv: max|diff|=0 (worst column: None)
+  MATCH        cse_central/feddrift/seed_0/feddrift_cicids_rho30_N3000_p100_seed0_target_alert_v4_rounds.csv: max|diff|=0 (worst column: None)
+  
+  8/8 runs match the reference within atol=1e-09.
+
+# Launcher log
+  group=ciciot_central jobs=4 gpus=0,1,2,3 env_profile=central
+  [GPU=1] START fedccfa_ciciot2023_mirai_rho30_N3000_p100_seed0_target_alert_v4
+  [GPU=0] START fedavg_ciciot2023_mirai_rho30_N3000_p100_seed0_target_alert_v4
+  group=cse_central jobs=4 gpus=0,1,2,3 env_profile=central
+  [GPU=3] START feddrift_ciciot2023_mirai_rho30_N3000_p100_seed0_target_alert_v4
+  [GPU=2] START fedccfa_global_classifier_ciciot2023_mirai_rho30_N3000_p100_seed0_target_alert_v4
+  [GPU=0] START fedavg_cicids_rho30_N3000_p100_seed0_target_alert_v4
+  [GPU=1] START fedccfa_cicids_rho30_N3000_p100_seed0_target_alert_v4
+  [GPU=2] START fedccfa_global_classifier_cicids_rho30_N3000_p100_seed0_target_alert_v4
+  [GPU=3] START feddrift_cicids_rho30_N3000_p100_seed0_target_alert_v4
+  [GPU=0] DONE fedavg_ciciot2023_mirai_rho30_N3000_p100_seed0_target_alert_v4 (508s)
+  [GPU=0] DONE fedavg_cicids_rho30_N3000_p100_seed0_target_alert_v4 (558s)
+  [GPU=1] DONE fedccfa_cicids_rho30_N3000_p100_seed0_target_alert_v4 (621s)
+  [GPU=2] DONE fedccfa_global_classifier_cicids_rho30_N3000_p100_seed0_target_alert_v4 (625s)
+  [GPU=3] DONE feddrift_ciciot2023_mirai_rho30_N3000_p100_seed0_target_alert_v4 (656s)
+  [GPU=3] DONE feddrift_cicids_rho30_N3000_p100_seed0_target_alert_v4 (668s)
+  All runs completed.
+  [GPU=2] DONE fedccfa_global_classifier_ciciot2023_mirai_rho30_N3000_p100_seed0_target_alert_v4 (683s)
+  [GPU=1] DONE fedccfa_ciciot2023_mirai_rho30_N3000_p100_seed0_target_alert_v4 (699s)
+  All runs completed.
+
+# Second fresh rerun AFTER post-validation trimming (unused algorithms/models removed), seed 0, all 4 methods x 2 datasets:
+  MATCH        ciciot_central/fedavg/seed_0/fedavg_ciciot2023_mirai_rho30_N3000_p100_seed0_target_alert_v4_rounds.csv: max|diff|=0 (worst column: None)
+  MATCH        ciciot_central/fedccfa/seed_0/fedccfa_ciciot2023_mirai_rho30_N3000_p100_seed0_target_alert_v4_rounds.csv: max|diff|=0 (worst column: None)
+  MATCH        ciciot_central/fedccfa_global_classifier/seed_0/fedccfa_global_classifier_ciciot2023_mirai_rho30_N3000_p100_seed0_target_alert_v4_rounds.csv: max|diff|=0 (worst column: None)
+  MATCH        ciciot_central/feddrift/seed_0/feddrift_ciciot2023_mirai_rho30_N3000_p100_seed0_target_alert_v4_rounds.csv: max|diff|=0 (worst column: None)
+  MATCH        cse_central/fedavg/seed_0/fedavg_cicids_rho30_N3000_p100_seed0_target_alert_v4_rounds.csv: max|diff|=0 (worst column: None)
+  MATCH        cse_central/fedccfa/seed_0/fedccfa_cicids_rho30_N3000_p100_seed0_target_alert_v4_rounds.csv: max|diff|=0 (worst column: None)
+  MATCH        cse_central/fedccfa_global_classifier/seed_0/fedccfa_global_classifier_cicids_rho30_N3000_p100_seed0_target_alert_v4_rounds.csv: max|diff|=0 (worst column: None)
+  MATCH        cse_central/feddrift/seed_0/feddrift_cicids_rho30_N3000_p100_seed0_target_alert_v4_rounds.csv: max|diff|=0 (worst column: None)
+  
+  8/8 runs match the reference within atol=1e-09.

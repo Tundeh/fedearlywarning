@@ -1,0 +1,196 @@
+# Post-validation trimming (2026-11-17): unused upstream algorithms/models removed.
+# Deleted files (present in source, absent here):
+#   methods/AdaptiveFedAvg.py
+#   methods/Ditto.py
+#   methods/FedBABU.py
+#   methods/FedFM.py
+#   methods/FedPAC.py
+#   methods/FedRep.py
+#   methods/IFCA.py
+#   methods/SCAFFOLD.py
+#   methods/pFedMe.py
+#   methods/FedProx.py
+#   methods/Flash.py
+#   methods/FedProx_Cyber.py
+#   methods/Flash_Cyber.py
+#   methods/FedAvg.py
+#   methods/FedCCFA.py
+#   methods/FedDrift.py
+#   entities/AdaptiveFedAvg.py
+#   entities/Ditto.py
+#   entities/FedBABU.py
+#   entities/FedFM.py
+#   entities/FedPAC.py
+#   entities/FedRep.py
+#   entities/IFCA.py
+#   entities/SCAFFOLD.py
+#   entities/pFedMe.py
+#   entities/FedProx.py
+#   entities/Flash.py
+#   entities/FedProx_Cyber.py
+#   entities/Flash_Cyber.py
+#   utils/drift.py
+# Edited files (unified diff against the validated source):
+--- source/methods/run_cyber.py
++++ release/methods/run_cyber.py
+@@ -1,7 +1,7 @@
+ #!/usr/bin/env python3
+ """Shared prequential cybersecurity runner for FedCCFA repository methods.
+ 
+-Supported: FedAvg, FedProx, Flash, FedDrift, FedCCFA.
++Supported: FedAvg, FedDrift, FedCCFA (clustered or global-classifier sharing).
+ 
+ Run from repository root:
+   export PYTHONPATH=.
+@@ -97,7 +97,7 @@
+ 
+ def main():
+     parser = argparse.ArgumentParser()
+-    parser.add_argument('--algorithm', required=True, choices=['FedAvg','FedProx','Flash','FedDrift','FedCCFA'])
++    parser.add_argument('--algorithm', required=True, choices=['FedAvg','FedDrift','FedCCFA'])
+     parser.add_argument('--config', default=None, help='Optional algorithm cyber YAML')
+     parser.add_argument(
+         '--experiment-config', default=None,
+--- source/utils/cyber_adapters.py
++++ release/utils/cyber_adapters.py
+@@ -116,73 +116,6 @@
+     name = 'FedAvg'
+ 
+ 
+-class FedProxAdapter(SendTrainAggregateAdapter):
+-    # FedProx clients may train model parameters directly without populating
+-    # client.local_update, so parameter aggregation is preferred.
+-    name = 'FedProx'
+-
+-    def _aggregate(self, selected_clients: Sequence):
+-        for candidate in ('aggregate_by_params', 'aggregate_by_parameters'):
+-            fn = getattr(self.server, candidate, None)
+-            if callable(fn):
+-                fn(selected_clients)
+-                return candidate
+-
+-        # Fallback: reconstruct local_update = local - global explicitly.
+-        fn = getattr(self.server, 'aggregate_by_updates', None)
+-        if not callable(fn):
+-            raise AdapterError(
+-                'FedProx: no compatible parameter or update aggregator found'
+-            )
+-
+-        global_vec = parameters_to_vector(
+-            self.server.model.parameters()
+-        ).detach().clone()
+-
+-        for client in selected_clients:
+-            local_vec = parameters_to_vector(
+-                client.model.parameters()
+-            ).detach().clone()
+-
+-            client.local_update = (
+-                local_vec
+-                - global_vec.to(
+-                    device=local_vec.device,
+-                    dtype=local_vec.dtype,
+-                )
+-            )
+-
+-        fn(selected_clients)
+-        return 'aggregate_by_updates(reconstructed_delta)'
+-
+-
+-class FlashAdapter(SendTrainAggregateAdapter):
+-    # Flash keeps native aggregate_by_updates. The only adaptation is dtype
+-    # restoration before the shared adapter broadcasts the server model.
+-    name = 'Flash'
+-
+-    def _aggregate(self, selected_clients: Sequence):
+-        fn = getattr(self.server, 'aggregate_by_updates', None)
+-        if not callable(fn):
+-            raise AdapterError(
+-                'Flash: expected server.aggregate_by_updates is unavailable'
+-            )
+-
+-        try:
+-            reference_dtype = next(self.server.model.parameters()).dtype
+-        except Exception:
+-            reference_dtype = torch.float32
+-
+-        fn(selected_clients)
+-
+-        # Flash aggregation may promote CyberMLP parameters to float64.
+-        model = getattr(self.server, 'model', None)
+-        if model is not None:
+-            model.to(dtype=reference_dtype)
+-
+-        return 'aggregate_by_updates'
+-
+-
+ class FedDriftAdapter(AlgorithmAdapter):
+     """Faithful bridge to the repository's clustered/multi-model FedDrift.
+ 
+@@ -601,8 +534,6 @@
+ def build_adapter(algorithm: str, args: dict, clients, server):
+     table = {
+         'FedAvg': FedAvgAdapter,
+-        'FedProx': FedProxAdapter,
+-        'Flash': FlashAdapter,
+         'FedDrift': FedDriftAdapter,
+         'FedCCFA': FedCCFAAdapter,
+     }
+--- source/utils/cyber_factory.py
++++ release/utils/cyber_factory.py
+@@ -6,12 +6,6 @@
+     if algorithm == 'FedAvg':
+         from entities.FedAvg_Cyber import CyberFedAvgClient, CyberFedAvgServer
+         return CyberFedAvgClient, CyberFedAvgServer
+-    if algorithm == 'FedProx':
+-        from entities.FedProx_Cyber import CyberFedProxClient, CyberFedProxServer
+-        return CyberFedProxClient, CyberFedProxServer
+-    if algorithm == 'Flash':
+-        from entities.Flash_Cyber import CyberFlashClient, CyberFlashServer
+-        return CyberFlashClient, CyberFlashServer
+     if algorithm == 'FedDrift':
+         from entities.FedDrift_Cyber import CyberFedDriftClient, CyberFedDriftServer
+         return CyberFedDriftClient, CyberFedDriftServer
+--- source/utils/models.py
++++ release/utils/models.py
+@@ -3,39 +3,10 @@
+ 
+ def get_model(dataset_name, model):
+     if model == "CNN":
+-        if dataset_name in ["Fashion-MNIST"]:
+-            return FashionMNISTCNN()
+-        elif dataset_name in ["CIFAR10", "CINIC-10"]:
++        if dataset_name in ["CIFAR10", "CINIC-10"]:
+             return CifarCNN()
+ 
+ 
+-class FashionMNISTCNN(nn.Module):
+-    def __init__(self):
+-        super(FashionMNISTCNN, self).__init__()
+-
+-        self.hidden_layers = nn.Sequential(
+-            nn.Conv2d(1, 16, 5, padding=0),
+-            nn.LeakyReLU(),
+-            nn.MaxPool2d(2, 2),
+-            nn.Conv2d(16, 32, 5, padding=1),
+-            nn.LeakyReLU(),
+-            nn.MaxPool2d(2, 2),
+-            nn.Flatten(),
+-            nn.Linear(32 * 5 * 5, 128),
+-            nn.LeakyReLU()
+-        )
+-        self.fc = nn.Linear(128, 10)
+-
+-    def forward(self, x, return_features=False):
+-        feature = self.hidden_layers(x)
+-        out = self.fc(feature)
+-
+-        if return_features:
+-            return out, feature
+-        else:
+-            return out
+-
+-
+ class CifarCNN(nn.Module):
+     def __init__(self, num_classes=10):
+         super(CifarCNN, self).__init__()
