@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+# Raw and processed datasets are not redistributed (see data/README.md)
+/data/*
+!/data/README.md
+# Local reruns and regenerated analysis (repository root only)
+/outputs/
+/analysis_output/
+/figures/
